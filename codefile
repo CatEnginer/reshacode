@@ -1,0 +1,259 @@
+// <Решательии 3000-универсальный><Лето 2017><ЯП-С>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+
+
+float g = 9.8;
+
+float md, Vd, dens;
+float mh, heav;
+float roarx, Varx, arxim;
+float Fwork, swork, workresult1;
+float Nwork, twork, workresult2;
+float An, tn, powerres;
+float menerg, venerg, energeres;
+float mpotener, hpotener, potenergi; 
+
+
+
+float density( float md, float Vd);
+float heavy( float mh );
+float farxim(float roarx, float Varx);
+float work1(float Fwork, float swork);
+float work2(float Nwork, float twork);
+float power(float An, float tn);
+float kinetenerge(float menerg, float venerg);
+float potentionener(float mpotener, float hpotener);
+
+//здесь царство функций!
+
+
+
+//здесь покоятся переменные-обыкновенные
+int choosescience;
+int choosefunc, choosethm;
+int choosework;
+
+
+
+
+
+
+
+//здесь функции с выбором темы
+int physic()
+{
+	printf("Что будем решать ?\n");
+		printf("1.Плотность\n");
+		printf("2.Сила тяжести\n");
+		printf("3.Сила Архимеда\n");
+		printf("4.Работа\n");
+		printf("5.Мощность\n");
+		printf("6.Кинетическая энергия\n");
+		printf("7.Потенциальная энергия\n");
+			scanf("%d", &choosethm);
+			switch( choosethm ){
+				case 1:
+					printf("Введите данные...\nМасса:");
+					scanf("%f", &md);
+					printf("Обьем:");
+					scanf("%f", &Vd);
+					printf("Результат:");
+					printf("%f",dens=density( md, Vd)); 
+				break;
+				case 2:
+					printf("Введите данные...\nМасса:");
+					scanf("%f", &mh);
+					printf( "Ваш результат:");
+					printf("%f",heav=heavy( mh )); 
+				break;
+				case 3:
+					printf("Введите данные...\nПлотность:");
+					scanf("%f", &roarx);
+					printf("Обьем:");
+					scanf("%f", &Varx);
+					printf("Получилось:");
+					printf("%f", arxim=farxim( roarx, Varx));
+				break;
+				case 4:
+					printf("Будем работать...\nЧто нам известно ?\n");
+					printf("1.Сила-расстояние\n2.Мощность-время\n");
+					scanf("%d", &choosework);
+					if (choosework == 1)
+					{
+						printf("Чему равна сила ?\n");
+						scanf("%f", &Fwork);
+						printf("Какого пройденное расстояние ?\n");
+						scanf("%f", &swork);
+						printf("Работа равна:");
+						printf("%f", workresult1=work1(Fwork, swork));
+					}
+					else if (choosework == 2)
+					{
+						printf("Чему равна мощность ?\n");
+						scanf("%f", &Nwork);
+						printf("Затраченное время ?\n");
+						scanf("%f", &twork);
+						printf("Работа равна:");
+						printf("%f", workresult2=work2(Nwork, twork));
+					}
+					else 
+					{
+						printf("Быть не может !");
+					}
+				break;
+				case 5:
+					printf("Чему равна работа ?\n");
+					scanf("%f", &An);
+					printf("Сколько затраченно времени ?\n");
+					scanf("%f", &tn);
+					printf("Получилось:");
+					printf("%f", powerres=power(An, tn));
+				break;
+				case 6:
+					printf("Масса обьекта равна ?\n");
+					scanf("%f", &menerg);
+					printf("Чему равна скорость ?\n");
+					scanf("%f", &venerg);
+					printf("Кинетическая равна:");
+					printf("%f", energeres=kinetenerge(menerg, venerg));
+				break;
+				case 7:
+					printf("Чему равна масса ?\n");
+					scanf("%f", &mpotener);
+					printf("Высота/расстояние ?\n");
+					scanf("%f", &hpotener);
+					printf("Результат - ");
+					printf("%f", potentionener(mpotener, hpotener));
+				break;
+			}
+}
+
+
+
+int algebra()
+{
+	printf("Привет !Здесь решалка для алегбры...\n");
+}
+
+
+
+
+int geometry()
+{
+	printf("Здесь геометрия\n");
+}
+
+
+
+
+
+
+
+//здесь запуск программы!
+int main()
+{
+
+
+	printf("Привет! Я калькулятор-учебник по техническим предметам...\n");
+	printf("Выбери:\n 1.Калькулятор \n 2.Учебник");
+		scanf("%d", &choosefunc);
+		if(choosefunc==1){
+	printf("Я могу посчитать много чего.Выбери:\n");      //здесь юзерверь выбирает,что ему необходимо решить... 
+		printf("1.Physic\n");
+		printf("2.Algebra\n");
+		printf("3.Geometry\n");
+		scanf("%d", &choosescience);
+		switch( choosescience )
+{   //предоставим ему выбор...
+			case 1:
+				physic(); //выведем выбор темы в отдельные функции
+			break;
+			case 2:
+				algebra();
+			break;	
+			case 3:
+				geometry();
+			break;
+			default:
+				printf("Неправильно введены данные!");
+			break;
+}					
+}
+else if ( choosefunc == 2 ){
+	printf("Здесь учебник");
+}
+}
+
+
+
+//здесь определение функций..
+
+float density(float md, float Vd)
+{
+
+	dens=md / Vd;
+
+	return(dens);
+
+}
+
+float heavy(float mh)
+{
+	heav=mh * g;
+
+	return(heav); 
+}
+
+
+float farxim(float roarx, float Varx)
+{
+	arxim=roarx * g * Varx;
+
+	return(arxim);
+}
+
+
+float work1(float Fwork, float swork)
+{
+
+	workresult1=Fwork * swork;
+
+	return(workresult1);
+
+}
+
+
+float work2(float Nwork, float twork)
+{
+
+	workresult2=Nwork * twork;
+
+	return(workresult2);
+
+}
+
+
+float power(float An, float tn)
+{
+	powerres=An / tn;
+
+	return(powerres);
+}
+
+
+float kinetenerge(float menerg, float venerg)
+{
+	energeres=menerg * (venerg * venerg) / 2;
+
+	return(energeres);
+}
+
+float potentionener(float mpotener, float fpotener)
+{
+	potenergi=mpotener * fpotener * g;
+
+	return(potenergi);
+}
