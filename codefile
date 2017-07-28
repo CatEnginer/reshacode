@@ -7,15 +7,6 @@
 
 float g = 9.8;
 
-float md, Vd, dens;
-float mh, heav;
-float roarx, Varx, arxim;
-float Fwork, swork, workresult1;
-float Nwork, twork, workresult2;
-float An, tn, powerres;
-float menerg, venerg, energeres;
-float mpotener, hpotener, potenergi; 
-
 
 
 float density( float md, float Vd);
@@ -45,6 +36,17 @@ int choosework;
 //здесь функции с выбором темы
 int physic()
 {
+    
+float md, Vd, dens;
+float mh, heav;
+float roarx, Varx, arxim;
+float Fwork, swork, workresult1;
+float Nwork, twork, workresult2;
+float An, tn, powerres;
+float menerg, venerg, energeres;
+float mpotener, hpotener, potenergi; 
+
+
 	printf("Что будем решать ?\n");
 		printf("1.Плотность\n");
 		printf("2.Сила тяжести\n");
