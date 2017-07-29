@@ -1,4 +1,4 @@
-// <Решательии 3000-универсальный><Лето 2017><ЯП-С>
+#FFFFFF#FFC0CB#FFC0CB// <Решатель 3000-универсальный><Лето 2017><ЯП-С>
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -29,14 +29,6 @@ int choosework;
 
 
 
-
-
-
-
-//здесь функции с выбором темы
-int physic()
-{
-    
 float md, Vd, dens;
 float mh, heav;
 float roarx, Varx, arxim;
@@ -45,6 +37,13 @@ float Nwork, twork, workresult2;
 float An, tn, powerres;
 float menerg, venerg, energeres;
 float mpotener, hpotener, potenergi; 
+
+
+
+//здесь функции с выбором темы
+int physic()
+{
+    
 
 
 	printf("Что будем решать ?\n");
@@ -137,7 +136,7 @@ float mpotener, hpotener, potenergi;
 
 int algebra()
 {
-	printf("Привет !Здесь решалка для алегбры...\n");
+	printf("\n");
 }
 
 
