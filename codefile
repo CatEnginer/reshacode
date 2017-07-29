@@ -1,4 +1,4 @@
-#FFFFFF#FFC0CB#FFC0CB// <Решатель 3000-универсальный><Лето 2017><ЯП-С>
+// <Решатель 3000-универсальный><Лето 2017><ЯП-С>
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -26,6 +26,7 @@ float potentionener(float mpotener, float hpotener);
 int choosescience;
 int choosefunc, choosethm;
 int choosework;
+int chsalgeb;
 
 
 
@@ -41,8 +42,7 @@ float mpotener, hpotener, potenergi;
 
 
 //здесь функции с выбором темы
-int physic()
-{
+int physic(){
     
 
 
@@ -130,21 +130,62 @@ int physic()
 					printf("%f", potentionener(mpotener, hpotener));
 				break;
 			}
+			return 0;
 }
 
 
 
-int algebra()
-{
-	printf("\n");
+int algebra(){
+	printf("Ну что ж,вперед к алгебре !");
+	printf("Какую формулу ?");
+	printf("1");
+	printf("2");
+	printf("2");
+	printf("2");
+	printf("2");
+	printf("2");
+	printf("Другие скоро будут :)");
+	scanf("%d", &chsalgeb);
+	switch( chsalgeb ){
+		case 1:
+		printf("Квадрат");
+		break;
+	
+		case 2:
+		printf("Квадрат2");
+		break;
+	
+		case 3:
+		printf("Квадрат3");
+		break;
+		
+		case 4:
+		printf("Куб1");
+		break;
+		
+		
+		case 5:
+		printf("Куб2");
+		break;
+		
+		case 6:
+		printf("Куб6");
+		break;
+	
+		default:
+		printf("Проект опенсосрс сам добавь:)");
+		break;
+	
+	}
+	return 0;
 }
 
 
 
 
-int geometry()
-{
+int geometry(){
 	printf("Здесь геометрия\n");
+	return 0;
 }
 
 
