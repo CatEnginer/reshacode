@@ -17,7 +17,13 @@ float work2(float Nwork, float twork);
 float power(float An, float tn);
 float kinetenerge(float menerg, float venerg);
 float potentionener(float mpotener, float hpotener);
-
+float algebrakvuds(float alkv1, float alkv2);
+float algebrakvud1(float alkv1, float alkv2);
+float algebrakvud2(float alkv1, float alkv2);
+float algebrakub1(float alkb1, float alkb2);
+float algebrakub2(float alkb1, float alkb2);
+float algebrakub3(float alkb1, float alkb2);
+float algebrakub4(float alkb1, float alkb2);
 //здесь царство функций!
 
 
@@ -29,7 +35,7 @@ int choosework;
 int chsalgeb;
 
 
-
+//Физика
 float md, Vd, dens;
 float mh, heav;
 float roarx, Varx, arxim;
@@ -37,7 +43,11 @@ float Fwork, swork, workresult1;
 float Nwork, twork, workresult2;
 float An, tn, powerres;
 float menerg, venerg, energeres;
-float mpotener, hpotener, potenergi; 
+float mpotener, hpotener, potenergi;
+//Алгебра
+float alkv1, alkv2, alkvr;
+float alkb1, alkb2, alkbr;
+ 
 
 
 
@@ -137,41 +147,80 @@ int physic(){
 
 int algebra(){
 	printf("Ну что ж,вперед к алгебре !");
-	printf("Какую формулу ?");
-	printf("1");
-	printf("2");
-	printf("2");
-	printf("2");
-	printf("2");
-	printf("2");
-	printf("Другие скоро будут :)");
+	printf("Какую формулу ?\n");
+	printf("1.Разность квадратов\n");
+	printf("2.Квадрат разности\n");
+	printf("3.Квадрат суммы\n");
+	printf("4.Куб суммы\n");
+	printf("5.Куб разности\n");
+	printf("6.Сумма кубов\n");
+	printf("7.Разность кубов\n");
 	scanf("%d", &chsalgeb);
 	switch( chsalgeb ){
 		case 1:
-		printf("Квадрат");
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkv1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkv2);
+		printf("Получилось:");
+		printf("%f", alkvr=algebrakvuds( alkv1, alkv2 ));
 		break;
 	
 		case 2:
-		printf("Квадрат2");
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkv1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkv2);
+		printf("Получилось:");
+		printf("%f", alkvr=algebrakvud1( alkv1, alkv2 ));
 		break;
 	
 		case 3:
-		printf("Квадрат3");
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkv1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkv2);
+		printf("Получилось:");
+		printf("%f", alkvr=algebrakvud2( alkv1, alkv2 ));
 		break;
 		
 		case 4:
-		printf("Куб1");
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkb1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkb2);
+		printf("Получилось:");
+		printf("%f", alkbr=algebrakub1( alkb1, alkb2 ));
 		break;
 		
 		
 		case 5:
-		printf("Куб2");
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkb1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkb2);
+		printf("Получилось:");
+		printf("%f", alkbr=algebrakub2( alkb1, alkb2 ));
 		break;
 		
 		case 6:
-		printf("Куб6");
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkb1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkb2);
+		printf("Получилось:");
+		printf("%f", alkbr=algebrakub3( alkb1, alkb2 ));
 		break;
-	
+		
+		case 7:
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkb1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkb2);
+		printf("Получилось:");
+		printf("%f", alkbr=algebrakub4( alkb1, alkb2 ));
+        break; 
+         	
 		default:
 		printf("Проект опенсосрс сам добавь:)");
 		break;
@@ -299,3 +348,77 @@ float potentionener(float mpotener, float fpotener)
 
 	return(potenergi);
 }
+
+
+float algebrakvuds(float alkv1, float alkv2)
+{
+	alkvr=(alkv1 + alkv2) * (alkv1 - alkv2);
+	
+	return(alkvr);
+}
+
+
+float algebrakvud1(float alkv1, float alkv2)
+{
+	alkvr=alkv1 * alkv1 + 2 * alkv1 * alkv2 + alkv2 * alkv2;
+	
+	return(alkvr);
+}
+
+
+
+float algebrakvud2(float alkv1, float alkv2)
+{
+	alkvr=alkv1 * alkv1 - 2 * alkv1 * alkv2 + alkv2 * alkv2;
+	
+	return(alkvr);
+}
+
+
+
+float algebrakub1(float alkb1, float alkb2)
+{
+	
+	alkbr=alkb1 * alkb1 * alkb1 + 3 * alkb1 * alkb1 * alkb2 + 3 * alkb1 * alkb2 +alkb2 + alkb2 * alkb2 * alkb2;
+	
+	return(alkbr);
+	
+}
+
+float algebrakub2(float alkb1, float alkb2)
+{
+	
+	alkbr=alkb1 * alkb1 * alkb1 - 3 * alkb1 * alkb1 * alkb2 + 3 * alkb1 * alkb2 * alkb2 - alkb2 * alkb2 * alkb2;
+	
+	return(alkbr);
+	
+}
+
+
+float algebrakub3(float alkb1, float alkb2)
+{
+	
+	alkbr=(alkb1 + alkb2) * (alkb1 * alkb1 + alkb1 * alkb2 + alkb2 * alkb2 );
+
+	return(alkbr);
+	
+}
+
+float algebrakub4(float alkb1, float alkb2)
+{
+	
+	alkbr=(alkb1 + alkb2) * (alkb1 * alkb1 + alkb1 * alkb2 + alkb2 * alkb2 );
+
+	return(alkbr);
+	
+}
+
+
+
+
+
+
+
+
+
+
