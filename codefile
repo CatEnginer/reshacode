@@ -1,0 +1,457 @@
+// <Решатель 3000-универсальный><Лето 2017><ЯП-С>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+
+
+float g = 9.8;
+
+
+
+float density( float md, float Vd);
+float heavy( float mh );
+float farxim(float roarx, float Varx);
+float work1(float Fwork, float swork);
+float work2(float Nwork, float twork);
+float power(float An, float tn);
+float kinetenerge(float menerg, float venerg);
+float potentionener(float mpotener, float hpotener);
+float algebrakvuds(float alkv1, float alkv2);
+float algebrakvud1(float alkv1, float alkv2);
+float algebrakvud2(float alkv1, float alkv2);
+float algebrakub1(float alkb1, float alkb2);
+float algebrakub2(float alkb1, float alkb2);
+float algebrakub3(float alkb1, float alkb2);
+float algebrakub4(float alkb1, float alkb2);
+//здесь царство функций!
+
+
+
+//здесь покоятся переменные-обыкновенные
+int choosescience;
+int choosefunc, choosethm;
+int choosework;
+int chsalgeb;
+int chsal;
+int chooseless;
+
+
+//Физика
+float md, Vd, dens;
+float mh, heav;
+float roarx, Varx, arxim;
+float Fwork, swork, workresult1;
+float Nwork, twork, workresult2;
+float An, tn, powerres;
+float menerg, venerg, energeres;
+float mpotener, hpotener, potenergi;
+//Алгебра
+float alkv1, alkv2, alkvr;
+float alkb1, alkb2, alkbr;
+ 
+
+
+
+//здесь функции с выбором темы
+int physic(){
+    
+
+
+	printf("Что будем решать ?\n");
+		printf("1.Плотность\n");
+		printf("2.Сила тяжести\n");
+		printf("3.Сила Архимеда\n");
+		printf("4.Работа\n");
+		printf("5.Мощность\n");
+		printf("6.Кинетическая энергия\n");
+		printf("7.Потенциальная энергия\n");
+			scanf("%d", &choosethm);
+			switch( choosethm ){
+				case 1:
+					printf("Введите данные...\nМасса:");
+					scanf("%f", &md);
+					printf("Обьем:");
+					scanf("%f", &Vd);
+					printf("Результат:");
+					printf("%f",dens=density( md, Vd)); 
+				break;
+				case 2:
+					printf("Введите данные...\nМасса:");
+					scanf("%f", &mh);
+					printf( "Ваш результат:");
+					printf("%f",heav=heavy( mh )); 
+				break;
+				case 3:
+					printf("Введите данные...\nПлотность:");
+					scanf("%f", &roarx);
+					printf("Обьем:");
+					scanf("%f", &Varx);
+					printf("Получилось:");
+					printf("%f", arxim=farxim( roarx, Varx));
+				break;
+				case 4:
+					printf("Будем работать...\nЧто нам известно ?\n");
+					printf("1.Сила-расстояние\n2.Мощность-время\n");
+					scanf("%d", &choosework);
+					if (choosework == 1)
+					{
+						printf("Чему равна сила ?\n");
+						scanf("%f", &Fwork);
+						printf("Какого пройденное расстояние ?\n");
+						scanf("%f", &swork);
+						printf("Работа равна:");
+						printf("%f", workresult1=work1(Fwork, swork));
+					}
+					else if (choosework == 2)
+					{
+						printf("Чему равна мощность ?\n");
+						scanf("%f", &Nwork);
+						printf("Затраченное время ?\n");
+						scanf("%f", &twork);
+						printf("Работа равна:");
+						printf("%f", workresult2=work2(Nwork, twork));
+					}
+					else 
+					{
+						printf("Быть не может !");
+					}
+				break;
+				case 5:
+					printf("Чему равна работа ?\n");
+					scanf("%f", &An);
+					printf("Сколько затраченно времени ?\n");
+					scanf("%f", &tn);
+					printf("Получилось:");
+					printf("%f", powerres=power(An, tn));
+				break;
+				case 6:
+					printf("Масса обьекта равна ?\n");
+					scanf("%f", &menerg);
+					printf("Чему равна скорость ?\n");
+					scanf("%f", &venerg);
+					printf("Кинетическая равна:");
+					printf("%f", energeres=kinetenerge(menerg, venerg));
+				break;
+				case 7:
+					printf("Чему равна масса ?\n");
+					scanf("%f", &mpotener);
+					printf("Высота/расстояние ?\n");
+					scanf("%f", &hpotener);
+					printf("Результат - ");
+					printf("%f", potentionener(mpotener, hpotener));
+				break;
+			}
+			return 0;
+}
+
+
+
+int algebra(){
+	printf("Ну что ж,вперед к алгебре !\n");
+	printf("Что решаем ?\n");
+	printf("1.ФСУ\n");
+	printf("Ждите...\n");
+	scanf("%d", &chsal);
+	if(chsal == 1)
+	{
+	printf("Какую формулу ?\n");
+	printf("1.Разность квадратов\n");
+	printf("2.Квадрат разности\n");
+	printf("3.Квадрат суммы\n");
+	printf("4.Куб суммы\n");
+	printf("5.Куб разности\n");
+	printf("6.Сумма кубов\n");
+	printf("7.Разность кубов\n");
+	scanf("%d", &chsalgeb);
+	switch( chsalgeb ){
+		case 1:
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkv1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkv2);
+		printf("Получилось:");
+		printf("%f", alkvr=algebrakvuds( alkv1, alkv2 ));
+		break;
+	
+		case 2:
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkv1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkv2);
+		printf("Получилось:");
+		printf("%f", alkvr=algebrakvud1( alkv1, alkv2 ));
+		break;
+	
+		case 3:
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkv1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkv2);
+		printf("Получилось:");
+		printf("%f", alkvr=algebrakvud2( alkv1, alkv2 ));
+		break;
+		
+		case 4:
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkb1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkb2);
+		printf("Получилось:");
+		printf("%f", alkbr=algebrakub1( alkb1, alkb2 ));
+		break;
+		
+		
+		case 5:
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkb1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkb2);
+		printf("Получилось:");
+		printf("%f", alkbr=algebrakub2( alkb1, alkb2 ));
+		break;
+		
+		case 6:
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkb1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkb2);
+		printf("Получилось:");
+		printf("%f", alkbr=algebrakub3( alkb1, alkb2 ));
+		break;
+		
+		case 7:
+		printf("Чему равно первое число ?\n");
+		scanf("%f", &alkb1);
+		printf("Чему равно второе ?\n");
+		scanf("%f", &alkb2);
+		printf("Получилось:");
+		printf("%f", alkbr=algebrakub4( alkb1, alkb2 ));
+        break; 
+         	
+		default:
+		printf("Проект опенсосрс сам добавь:)");
+		break;
+	
+	}
+	}
+	else if(chsal == 2)
+	{
+			printf("Скоро добавим !");
+	}
+	return 0;
+}
+
+
+
+
+int geometry(){
+	printf("Здесь геометрия\n");
+	return 0;
+}
+
+
+
+
+
+
+
+//здесь запуск программы!
+int main()
+{
+
+
+	printf("Привет! Я калькулятор-учебник по техническим предметам...\n");
+	printf("Выбери:\n 1.Калькулятор \n 2.Учебник");
+		scanf("%d", &choosefunc);
+		if(choosefunc==1){
+	printf("Я могу посчитать много чего.Выбери:\n");      //здесь юзерверь выбирает,что ему необходимо решить... 
+		printf("1.Физика\n");
+		printf("2.Алгебра\n");
+		printf("3.Геометрия\n");
+		scanf("%d", &choosescience);
+		switch( choosescience )
+{   //предоставим ему выбор...
+			case 1:
+				physic(); //выведем выбор темы в отдельные функции
+			break;
+			case 2:
+				algebra();
+			break;	
+			case 3:
+				geometry();
+			break;
+			default:
+				printf("Неправильно введены данные!");
+			break;
+}					
+}
+else if ( choosefunc == 2 ){
+	printf("Вас приветствует учебник \n");
+	printf("Данный раздел содержит множество различных уроков\n");
+	printf("Я могу показать много чего.Выбери:\n");      //здесь юзерверь выбирает,что ему необходимо решить... 
+		printf("1.Физика\n");
+		printf("2.Алгебра\n");
+		printf("3.Геометрия\n");
+		scanf("%d", &chooseless);
+		switch( chooseless ){   //предоставим ему выбор...
+			case 1:
+				printf("Уроки физики"); //выведем выбор темы в отдельные функции
+			break;
+			case 2:
+				printf("Уроки алгебры");
+			break;	
+			case 3:
+				printf("Уроки геометрии");
+			break;
+			default:
+				printf("Возможно добавим...");
+			break;
+}
+}
+}
+
+
+
+//здесь определение функций..
+
+float density(float md, float Vd)
+{
+
+	dens=md / Vd;
+
+	return(dens);
+
+}
+
+float heavy(float mh)
+{
+	heav=mh * g;
+
+	return(heav); 
+}
+
+
+float farxim(float roarx, float Varx)
+{
+	arxim=roarx * g * Varx;
+
+	return(arxim);
+}
+
+
+float work1(float Fwork, float swork)
+{
+
+	workresult1=Fwork * swork;
+
+	return(workresult1);
+
+}
+
+
+float work2(float Nwork, float twork)
+{
+
+	workresult2=Nwork * twork;
+
+	return(workresult2);
+
+}
+
+
+float power(float An, float tn)
+{
+	powerres=An / tn;
+
+	return(powerres);
+}
+
+
+float kinetenerge(float menerg, float venerg)
+{
+	energeres=menerg * (venerg * venerg) / 2;
+
+	return(energeres);
+}
+
+float potentionener(float mpotener, float fpotener)
+{
+	potenergi=mpotener * fpotener * g;
+
+	return(potenergi);
+}
+
+
+float algebrakvuds(float alkv1, float alkv2)
+{
+	alkvr=(alkv1 + alkv2) * (alkv1 - alkv2);
+	
+	return(alkvr);
+}
+
+
+float algebrakvud1(float alkv1, float alkv2)
+{
+	alkvr=alkv1 * alkv1 + 2 * alkv1 * alkv2 + alkv2 * alkv2;
+	
+	return(alkvr);
+}
+
+
+
+float algebrakvud2(float alkv1, float alkv2)
+{
+	alkvr=alkv1 * alkv1 - 2 * alkv1 * alkv2 + alkv2 * alkv2;
+	
+	return(alkvr);
+}
+
+
+
+float algebrakub1(float alkb1, float alkb2)
+{
+	
+	alkbr=alkb1 * alkb1 * alkb1 + 3 * alkb1 * alkb1 * alkb2 + 3 * alkb1 * alkb2 +alkb2 + alkb2 * alkb2 * alkb2;
+	
+	return(alkbr);
+	
+}
+
+float algebrakub2(float alkb1, float alkb2)
+{
+	
+	alkbr=alkb1 * alkb1 * alkb1 - 3 * alkb1 * alkb1 * alkb2 + 3 * alkb1 * alkb2 * alkb2 - alkb2 * alkb2 * alkb2;
+	
+	return(alkbr);
+	
+}
+
+
+float algebrakub3(float alkb1, float alkb2)
+{
+	
+	alkbr=(alkb1 + alkb2) * (alkb1 * alkb1 + alkb1 * alkb2 + alkb2 * alkb2 );
+
+	return(alkbr);
+	
+}
+
+float algebrakub4(float alkb1, float alkb2)
+{
+	
+	alkbr=(alkb1 + alkb2) * (alkb1 * alkb1 + alkb1 * alkb2 + alkb2 * alkb2 );
+
+	return(alkbr);
+	
+}
+
+
+
+
+
+
+
+
+
+
