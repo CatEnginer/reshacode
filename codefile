@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "/home/rostikit/gitrepo/functs.c"
+#include "/home/rostikit/gitrepo/physicf"
+#include "/home/rostikit/gitrepo/algebraf"
+#include "/home/rostikit/gitrepo/geometry"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -135,8 +137,9 @@ int algebra(){
 
 
 
-int geometry(){
-	printf("Здесь геометрия\n");
+int geometry()
+{
+	maingeo();
 	return 0;
 }
 

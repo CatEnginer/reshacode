@@ -3,7 +3,6 @@
 #include <math.h>
 
 
-
 float density( float md, float Vd);
 float heavy( float mh );
 float farxim(float roarx, float Varx);
@@ -12,13 +11,8 @@ float work2(float Nwork, float twork);
 float power(float An, float tn);
 float kinetenerge(float menerg, float venerg);
 float potentionener(float mpotener, float hpotener);
-float algebrakvuds(float alkv1, float alkv2);
-float algebrakvud1(float alkv1, float alkv2);
-float algebrakvud2(float alkv1, float alkv2 );
-float algebrakub1(float alkb1, float alkb2);
-float algebrakub2(float alkb1, float alkb2);
-float algebrakub3(float alkb1, float alkb2);
-float algebrakub4(float alkb1, float alkb2);
+
+
 
 
 //Физика
@@ -30,9 +24,8 @@ float Nwork, twork, workresult2;
 float An, tn, powerres;
 float menerg, venerg, energeres;
 float mpotener, hpotener, potenergi;
-//Алгебра
-float alkv1, alkv2, alkvr;
-float alkb1, alkb2, alkbr;
+
+
 //Нужная перемменная для выбора
 int choosework;
 //Констата
@@ -40,9 +33,7 @@ float g = 9.8;
 
 
 
-
-
- int phc1()
+int phc1()
  {
 	 printf("Введите данные...\nМасса:");
 					scanf("%f", &md);
@@ -52,10 +43,6 @@ float g = 9.8;
 					printf("%f", dens=density( md, Vd));
 					return 0; 
 }
-
-
-
-
  int phc2()
  {
 	 printf("Введите данные...\nМасса:");
@@ -64,12 +51,6 @@ float g = 9.8;
 					printf("%f",heav=heavy( mh )); 
 					return 0;
 }
-
-
-
-
-
-
  int phc3()
  {
 	 printf("Введите данные...\nПлотность:");
@@ -80,11 +61,6 @@ float g = 9.8;
 					printf("%f", arxim=farxim( roarx, Varx));
 					return 0;
 }
-
-
-
-
-
  int phc4()
  {
 	 printf("Будем работать...\nЧто нам известно ?\n");
@@ -114,11 +90,6 @@ float g = 9.8;
 					}
 					return 0;
 					}
-					
-					
-					
-					
-					
  int phc5()
  {
 	 printf("Чему равна работа ?\n");
@@ -129,12 +100,6 @@ float g = 9.8;
 					printf("%f", powerres=power(An, tn));
 					return 0;
 					}
-					
-					
-					
-					
-					
-					
  int phc6()
  { 
 	 printf("Масса обьекта равна ?\n");
@@ -145,12 +110,6 @@ float g = 9.8;
 					printf("%f", energeres=kinetenerge(menerg, venerg));
 					return 0;
 					}
-					
-					
-					
-					
-					
-					
  int phc7()
  {
 	 printf("Чему равна масса ?\n");
@@ -161,124 +120,6 @@ float g = 9.8;
 					printf("%f", potentionener(mpotener, hpotener));
 					return 0;
 }
-
-int alg1()
-{
-	printf("Чему равно первое число ?\n");
-		scanf("%f", &alkv1);
-		printf("Чему равно второе ?\n");
-		scanf("%f", &alkv2);
-		printf("Получилось:");
-		printf("%f", alkvr=algebrakvuds( alkv1, alkv2 ));
-		
-	return 0; 
-}
-
-
-
-
-
-
-int alg2()
-{
-	printf("Чему равно первое число ?\n");
-		scanf("%f", &alkv1);
-		printf("Чему равно второе ?\n");
-		scanf("%f", &alkv2);
-		printf("Получилось:");
-		printf("%f", alkvr=algebrakvud1( alkv1, alkv2 ));
-	
-	return 0;
-	
-}
-
-
-
-
-
-
-int alg3()
-{
-	printf("Чему равно первое число ?\n");
-		scanf("%f", &alkv1);
-		printf("Чему равно второе ?\n");
-		scanf("%f", &alkv2);
-		printf("Получилось:");
-		printf("%f", alkvr=algebrakvud2( alkv1, alkv2 ));
-	
-	return 0;
-}
-
-
-
-
-
-
-
-int alg4()
-{
-	printf("Чему равно первое число ?\n");
-		scanf("%f", &alkb1);
-		printf("Чему равно второе ?\n");
-		scanf("%f", &alkb2);
-		printf("Получилось:");
-		printf("%f", alkbr=algebrakub1( alkb1, alkb2 ));
-	
-		return 0;
-}
-
-
-
-
-
-
-int alg5()
-{
-	printf("Чему равно первое число ?\n");
-		scanf("%f", &alkb1);
-		printf("Чему равно второе ?\n");
-		scanf("%f", &alkb2);
-		printf("Получилось:");
-		printf("%f", alkbr=algebrakub2( alkb1, alkb2 ));
-return 0;
-	
-}
-
-
-
-
-
-
-int alg6()
-{
-
-printf("Чему равно первое число ?\n");
-		scanf("%f", &alkb1);
-		printf("Чему равно второе ?\n");
-		scanf("%f", &alkb2);
-		printf("Получилось:");
-		printf("%f", alkbr=algebrakub3( alkb1, alkb2 ));
-
-	return 0;
-}
-
-
-
-
-int alg7()
-{
-
-printf("Чему равно первое число ?\n");
-		scanf("%f", &alkb1);
-		printf("Чему равно второе ?\n");
-		scanf("%f", &alkb2);
-		printf("Получилось:");
-		printf("%f", alkbr=algebrakub4( alkb1, alkb2 ));
-
-	return 0;
-}
-
-
 
 
 //здесь определение функций..
@@ -351,68 +192,9 @@ float potentionener(float mpotener, float fpotener)
 }
 
 
-float algebrakvuds(float alkv1, float alkv2)
-{
-	alkvr=(alkv1 + alkv2) * (alkv1 - alkv2);
-	
-	return(alkvr);
-}
-
-
-float algebrakvud1(float alkv1, float alkv2)
-{
-	alkvr=alkv1 * alkv1 + 2 * alkv1 * alkv2 + alkv2 * alkv2;
-	
-	return(alkvr);
-}
 
 
 
-float algebrakvud2(float alkv1, float alkv2)
-{
-	alkvr=alkv1 * alkv1 - 2 * alkv1 * alkv2 + alkv2 * alkv2;
-	
-	return(alkvr);
-}
-
-
-
-float algebrakub1(float alkb1, float alkb2)
-{
-	
-	alkbr=alkb1 * alkb1 * alkb1 + 3 * alkb1 * alkb1 * alkb2 + 3 * alkb1 * alkb2 +alkb2 + alkb2 * alkb2 * alkb2;
-	
-	return(alkbr);
-	
-}
-
-float algebrakub2(float alkb1, float alkb2)
-{
-	
-	alkbr=alkb1 * alkb1 * alkb1 - 3 * alkb1 * alkb1 * alkb2 + 3 * alkb1 * alkb2 * alkb2 - alkb2 * alkb2 * alkb2;
-	
-	return(alkbr);
-	
-}
-
-
-float algebrakub3(float alkb1, float alkb2)
-{
-	
-	alkbr=(alkb1 + alkb2) * (alkb1 * alkb1 + alkb1 * alkb2 + alkb2 * alkb2 );
-
-	return(alkbr);
-	
-}
-
-float algebrakub4(float alkb1, float alkb2)
-{
-	
-	alkbr=(alkb1 + alkb2) * (alkb1 * alkb1 + alkb1 * alkb2 + alkb2 * alkb2 );
-
-	return(alkbr);
-	
-}
 
 
 
