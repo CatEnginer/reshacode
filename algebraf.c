@@ -1,6 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <locale.h>
 
 
 float algebrakvuds(float alkv1, float alkv2);
@@ -15,6 +19,9 @@ float algebrakub4(float alkb1, float alkb2);
 //Алгебра
 float alkv1, alkv2, alkvr;
 float alkb1, alkb2, alkbr;
+
+
+
 
 
 int alg1()

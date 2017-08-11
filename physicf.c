@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <locale.h>
 
 float density( float md, float Vd);
 float heavy( float mh );
@@ -30,6 +33,8 @@ float mpotener, hpotener, potenergi;
 int choosework;
 //Констата
 float g = 9.8;
+
+
 
 
 
